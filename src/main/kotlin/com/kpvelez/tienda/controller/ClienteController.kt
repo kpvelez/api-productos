@@ -1,21 +1,22 @@
 package com.kpvelez.tienda.controller
 
-import com.kpvelez.tienda.model.Producto
-import com.kpvelez.tienda.service.ProductoService
+import com.kpvelez.tienda.model.Cliente
+import com.kpvelez.tienda.service.ClienteService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/productos")
+@RequestMapping("/cliente")
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT])
 
-class ProductoController {
+class ClienteController {
 
     @Autowired
-    lateinit var productoService:  ProductoService
+    lateinit var clienteService:  ClienteService
 
     @GetMapping
-    fun list(): List<Producto>{
-        return productoService.list()
+    fun list(): List<Cliente>{
+        return clienteService.list()
+
     }
 }
