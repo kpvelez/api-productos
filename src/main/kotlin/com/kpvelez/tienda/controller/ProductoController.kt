@@ -18,4 +18,9 @@ class ProductoController {
     fun list(): List<Producto>{
         return productoService.list()
     }
+
+    @PostMapping
+    fun save (@RequestBody producto:Producto): Producto{
+        return productoService.save(producto)
+    }
 }

@@ -1,6 +1,7 @@
 package com.kpvelez.tienda.controller
 
 import com.kpvelez.tienda.model.Cliente
+import com.kpvelez.tienda.model.Producto
 import com.kpvelez.tienda.service.ClienteService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -18,5 +19,8 @@ class ClienteController {
     fun list(): List<Cliente>{
         return clienteService.list()
 
+    }
+    fun save (@RequestBody cliente: Cliente): Cliente {
+        return clienteService.save(cliente)
     }
 }
