@@ -23,4 +23,23 @@ class ClienteService {
         return clienteRepository.save(cliente)
 
     }
+
+    fun update (@RequestBody cliente: Cliente): Cliente {
+        return clienteRepository.save(cliente)
+    }
+
+    fun updateApellido (cliente: Cliente):Cliente {
+        val response = clienteRepository.findById(cliente.id)
+            ?: throw Exception()
+        response.apply {
+            this.apellido=cliente.apellido
+        }
+        return clienteRepository.save(response)
+    }
+
+    fun delete (id:Long): Boolean{
+        clienteRepository.deleteById(id)
+        return true
+    }
+
 }
